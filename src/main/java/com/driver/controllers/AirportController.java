@@ -31,7 +31,6 @@ public class AirportController {
 
         return "SUCCESS";
     }
-
     @GetMapping("/get-largest-aiport")
     public String getLargestAirportName(){
         String airportName=airportService.getLargestAirportName();
@@ -144,5 +143,11 @@ public class AirportController {
        return "SUCCESS";
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+    @GetMapping("/")
+    public int getNumberOfPeopleOnWithNoFlight(){
+        return airportService.getNumberOfPeopleOnWithNoFlight();
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

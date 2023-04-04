@@ -166,4 +166,17 @@ public class AirportRepository {
         return true;
 
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public int getNumberOfPeopleOnWithNoFlight() {
+        int count=0;
+        for(Integer passengerId: passengerDb.keySet()){
+            boolean flag=false;
+            for(HashSet<Integer> passengers:flightToPassengerDb.values()){
+                if(passengers.contains(passengerId)) flag=true;
+            }
+            if(!flag)count++;
+        }
+        return count;
+    }
+////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
