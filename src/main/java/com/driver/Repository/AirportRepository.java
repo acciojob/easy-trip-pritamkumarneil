@@ -99,7 +99,10 @@ public class AirportRepository {
         return ans;
     }
     public int getNumberOfPeopleOnFlight(Integer flightId) {
-        int noOfPeople=flightToPassengerDb.get(flightId).size();
+        if(!flightToPassengerDb.containsKey(flightId))return 0;
+        else if(flightToPassengerDb.get(flightId)==null)return 0;
+        int noOfPeople=0;
+        noOfPeople=flightToPassengerDb.get(flightId).size();
         return noOfPeople;
     }
 

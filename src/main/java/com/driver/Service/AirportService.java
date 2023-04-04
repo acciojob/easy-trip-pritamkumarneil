@@ -52,8 +52,11 @@ public class AirportService {
 
     public int calculateRevenueOfAFlight(Integer flightId) {
         int noOfPeople=airportRepository.getNumberOfPeopleOnFlight(flightId);
-        int extraFair=(noOfPeople*(noOfPeople+1))/2;
-        int ans=extraFair*50 + noOfPeople*3000;
+        if(noOfPeople==0)return 0;
+        int fixedPrice=noOfPeople*3000;
+        noOfPeople=noOfPeople-1;// read the question clearly in order to understand this line
+        int extraFair=(noOfPeople*(noOfPeople+1))*25;
+        int ans=extraFair + fixedPrice;
         return ans;
     }
 
