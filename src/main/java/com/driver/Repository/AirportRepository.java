@@ -178,5 +178,11 @@ public class AirportRepository {
         }
         return count;
     }
+    public int getNumberOfPeopleOnWithNoFlight(Integer flightId) {
+        int count=0;
+        int bookedTicket=flightToPassengerDb.get(flightId).size();
+        int capacity=flightDb.get(flightId).getMaxCapacity();
+        return capacity-bookedTicket;
+    }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

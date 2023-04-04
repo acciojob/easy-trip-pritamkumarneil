@@ -144,9 +144,17 @@ public class AirportController {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
+//    @GetMapping("/get-number-of-people-on-with-no-flight")
+//    public int getNumberOfPeopleOnWithNoFlight(){
+//        return airportService.getNumberOfPeopleOnWithNoFlight();
+//    }
     @GetMapping("/get-number-of-people-on-with-no-flight")
-    public int getNumberOfPeopleOnWithNoFlight(){
-        return airportService.getNumberOfPeopleOnWithNoFlight();
+    public int getNumberOfPeopleOnWithNoFlight(@RequestParam("flightId")Integer flightId){
+        return airportService.getNumberOfPeopleOnWithNoFlight(flightId);
+    }
+    @GetMapping("/get-number-of-people-on-with-no-flight/{flightId}")
+    public int getNumberOfPeopleOnWithNoFlight1(@PathVariable("flightId")Integer flightId){
+        return airportService.getNumberOfPeopleOnWithNoFlight(flightId);
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -86,5 +86,8 @@ public class AirportService {
     public int getNumberOfPeopleOnWithNoFlight() {
         return airportRepository.getNumberOfPeopleOnWithNoFlight();
     }
+    public int getNumberOfPeopleOnWithNoFlight(Integer flightId) {
+        return airportRepository.getNumberOfPeopleOnWithNoFlight(flightId);
+    }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
