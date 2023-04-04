@@ -77,12 +77,14 @@ public class AirportRepository {
 
     public String getAirportNameFromFlightId(Integer flightId) {
         String ans="";
+        boolean flag=false;
        City city[]=City.values();
        // get to the city name of airport from flightId
         City cityName=null;
         for(Flight flight: flightDb.values()){
             if(flight.getFlightId()==flightId){
-                cityName=flight.getFromCity();
+                cityName=flight.getFromCity();//get fromCity// this is the city name where airport is there
+                flag=true;
             }
         }
 
@@ -93,7 +95,7 @@ public class AirportRepository {
                    ans=airport.getAirportName();
                }
            }
-
+        if(!flag)return null;
         return ans;
     }
     public int getNumberOfPeopleOnFlight(Integer flightId) {
