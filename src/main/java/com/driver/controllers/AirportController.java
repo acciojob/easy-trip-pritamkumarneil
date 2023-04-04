@@ -144,7 +144,7 @@ public class AirportController {
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
-    @GetMapping("/")
+    @GetMapping("/get-number-of-people-on-with-no-flight")
     public int getNumberOfPeopleOnWithNoFlight(){
         return airportService.getNumberOfPeopleOnWithNoFlight();
     }
